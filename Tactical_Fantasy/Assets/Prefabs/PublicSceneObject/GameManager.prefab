@@ -1,0 +1,895 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1679360147239650857
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1679360147239650856}
+  - component: {fileID: 1679360147239650871}
+  m_Layer: 0
+  m_Name: StringManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1679360147239650856
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1679360147239650857}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1679360147773126065}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1679360147239650871
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1679360147239650857}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95685443c0038ba4d8a54ace4a6b109a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogStrings: []
+  merchantSystem: []
+--- !u!1 &1679360147549932045
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1679360147549932044}
+  m_Layer: 0
+  m_Name: ItemData
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1679360147549932044
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1679360147549932045}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1679360148488690172}
+  - {fileID: 1679360149163208163}
+  - {fileID: 1679360148951127114}
+  - {fileID: 1679360148617218087}
+  - {fileID: 1679360149078958456}
+  m_Father: {fileID: 1679360149067088607}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1679360147773126066
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1679360147773126065}
+  - component: {fileID: 1679360147773126064}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1679360147773126065
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1679360147773126066}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1679360149067088607}
+  - {fileID: 1679360148557614798}
+  - {fileID: 1679360147239650856}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1679360147773126064
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1679360147773126066}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ed2d43785de2a149b02dcb71758174f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &1679360148389850307
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1679360148389850306}
+  - component: {fileID: 1679360148389850305}
+  m_Layer: 0
+  m_Name: NonSaveItems
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1679360148389850306
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1679360148389850307}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1679360149067088607}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1679360148389850305
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1679360148389850307}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 913bc41470347aa4190fc256f7880b71, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &1679360148488690173
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1679360148488690172}
+  - component: {fileID: 1679360148488690171}
+  m_Layer: 0
+  m_Name: LootData
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1679360148488690172
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1679360148488690173}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1679360147549932044}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1679360148488690171
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1679360148488690173}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3aebad2551d210499dd605fcee06bca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  norLoots:
+  - name: Wolf fang
+    ItemCode: 1010000
+    xsize: 1
+    ysize: 1
+    itemSprite: {fileID: 21300000, guid: aeb22234c06214140af09d07fb0f18de, type: 3}
+    overlapLimit: 16
+    value: 200
+  - name: Slime mucus
+    ItemCode: 1010001
+    xsize: 1
+    ysize: 1
+    itemSprite: {fileID: 21300000, guid: 022b98ee7809a7e4f8d5b07d6e6803d3, type: 3}
+    overlapLimit: 16
+    value: 50
+  impLoots: []
+--- !u!1 &1679360148557614799
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1679360148557614798}
+  - component: {fileID: 1679360148557614797}
+  m_Layer: 0
+  m_Name: SaveManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1679360148557614798
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1679360148557614799}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1679360147773126065}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1679360148557614797
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1679360148557614799}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c0bd6ae2a38ca0409a73654b8ac5068, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  questFlag: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+  eventFlag: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+  chestFlag: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+  money: 0
+--- !u!1 &1679360148617218072
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1679360148617218087}
+  - component: {fileID: 1679360148617218086}
+  m_Layer: 0
+  m_Name: AmmoData
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1679360148617218087
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1679360148617218072}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1679360147549932044}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1679360148617218086
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1679360148617218072}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1b5e3ef184ec4941801879ec1cd209c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ammos:
+  - name: 5.56mm priest
+    ItemCode: 4000000
+    xsize: 1
+    ysize: 1
+    itemSprite: {fileID: 21300000, guid: 9a787ec92ef22c44cb550c88d18809e5, type: 3}
+    overlapLimit: 60
+    value: 20
+    kindOfAmmo: 1
+    damage: 100
+    Penetration: 4
+    numWarhead: 0
+    spread: 0
+  - name: 9mm priest
+    ItemCode: 4000001
+    xsize: 1
+    ysize: 1
+    itemSprite: {fileID: 21300000, guid: 9e1affd3b1cd7a846b0b78ac9fce23bf, type: 3}
+    overlapLimit: 60
+    value: 10
+    kindOfAmmo: 3
+    damage: 60
+    Penetration: 2
+    numWarhead: 0
+    spread: 0
+--- !u!1 &1679360148951127115
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1679360148951127114}
+  - component: {fileID: 1679360148951127113}
+  m_Layer: 0
+  m_Name: AttachmentData
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1679360148951127114
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1679360148951127115}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1679360147549932044}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1679360148951127113
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1679360148951127115}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f449dd0569eae6a46892c86b0c7d4753, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  magazines:
+  - name: 5.56mm Black 30 Magazine
+    ItemCode: 3010000
+    xsize: 1
+    ysize: 2
+    itemSprite: {fileID: 21300000, guid: cf500b69ba2d4e34a8900b7ee923a393, type: 3}
+    overlapLimit: 1
+    value: 50
+    kindOfMagazine: 1
+    magazineSize: 30
+    magazineSpeed: 0
+    MagazineSprite: {fileID: 21300000, guid: 5485e176eec9b124494eb60ff45a633e, type: 3}
+    MagazineColor: {r: 0, g: 0, b: 0, a: 0}
+  - name: 9mm Black 7 Magazine
+    ItemCode: 3010001
+    xsize: 1
+    ysize: 1
+    itemSprite: {fileID: 21300000, guid: c2262312847662948b58c5d74de9ff93, type: 3}
+    overlapLimit: 1
+    value: 30
+    kindOfMagazine: 3
+    magazineSize: 7
+    magazineSpeed: 0
+    MagazineSprite: {fileID: 0}
+    MagazineColor: {r: 0, g: 0, b: 0, a: 0}
+  - name: test const shotgun magazine
+    ItemCode: 3010002
+    xsize: 2
+    ysize: 1
+    itemSprite: {fileID: 21300000, guid: b9fda5ea4a23319478e027ddbfaee211, type: 3}
+    overlapLimit: 1
+    value: 0
+    kindOfMagazine: 11
+    magazineSize: 8
+    magazineSpeed: 0
+    MagazineSprite: {fileID: 0}
+    MagazineColor: {r: 0, g: 0, b: 0, a: 0}
+  handles:
+  - name: 
+    ItemCode: 0
+    xsize: 1
+    ysize: 1
+    itemSprite: {fileID: 21300000, guid: 7d4322e6750334f43a1bb864327f5dd7, type: 3}
+    overlapLimit: 0
+    value: 0
+    MaxRecoil: {x: 0, y: 0}
+    MinRecoil: {x: 0, y: 0}
+    plusRecoil: {x: 0, y: 0}
+    recoverRecoil: {x: 0, y: 0}
+  flashes:
+  - name: 
+    ItemCode: 0
+    xsize: 2
+    ysize: 2
+    itemSprite: {fileID: 21300000, guid: 60ed5805c59dbb54f979693952f2b300, type: 3}
+    overlapLimit: 0
+    value: 0
+  scopes: []
+  reverses: []
+  sprays:
+  - name: 
+    ItemCode: 0
+    xsize: 0
+    ysize: 0
+    itemSprite: {fileID: 0}
+    overlapLimit: 0
+    value: 0
+    sprayTextures:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+--- !u!1 &1679360149067088592
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1679360149067088607}
+  - component: {fileID: 1679360149067088606}
+  m_Layer: 0
+  m_Name: ItemManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1679360149067088607
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1679360149067088592}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1679360147549932044}
+  - {fileID: 1679360148389850306}
+  m_Father: {fileID: 1679360147773126065}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1679360149067088606
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1679360149067088592}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d54d116934686a5469bb605d2884393a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  amountFont: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+  mouseItemPrefabs: {fileID: 8089113449672141256, guid: 9ee3b75d11bf9b74a98064a4329bd74e, type: 3}
+  cellPrefabs:
+  - {fileID: 8247359138367391238, guid: 912eccec4c525fc4c941d6e7e72022f4, type: 3}
+  - {fileID: 7892522680262533828, guid: 171bf1f1ce31bc943ae003c1decbf4b6, type: 3}
+  - {fileID: 5292614661638711043, guid: af01aea4a5a3a484986c9a505ff5b5fe, type: 3}
+  - {fileID: 2947934114144258333, guid: 7e9851dbf0198e7489028e6c09789134, type: 3}
+  - {fileID: 7304384288364827143, guid: 03476feb567d378468dc16aa9122e55b, type: 3}
+  gearCellPrefabs:
+  - {fileID: 2379834521981433152, guid: 163322cf75ba80c4abca20c7ff1cbe13, type: 3}
+  - {fileID: 507907991284746525, guid: 8a948b4c8ad788b45982c2c29d106b9b, type: 3}
+  - {fileID: 195966039295985018, guid: b2408cafb6e80df44902eb28d62732ec, type: 3}
+  - {fileID: 195966039295985018, guid: b2408cafb6e80df44902eb28d62732ec, type: 3}
+  - {fileID: 6332939787716256777, guid: 42d6b25f99cf49f4cb0d83be6f602d9d, type: 3}
+  - {fileID: 8910176281568473478, guid: 0df0650d0127ba54597071c56eeed2af, type: 3}
+  - {fileID: 8910176281568473478, guid: 4141757a8d3a96449b00b8f55edb098e, type: 3}
+  - {fileID: 8910176281568473478, guid: 3b2c557ea2810c04e9ed601213a0cebf, type: 3}
+  - {fileID: 2349532429098096800, guid: 498523ba16e974c498e0aed378c72799, type: 3}
+  - {fileID: 603376974719751779, guid: cfc718281feef4d46afee0a31bc3bbe6, type: 3}
+  - {fileID: 4466499073164543368, guid: 73b7ae79c171df64b83e640cf680f271, type: 3}
+  - {fileID: 504641747007416350, guid: 357d39b299ed28442a28825137fdd28f, type: 3}
+  gearEmptyCellSprites:
+  - {fileID: 21300000, guid: cf225667817891a40b29833cd0126f67, type: 3}
+  - {fileID: 21300000, guid: cf225667817891a40b29833cd0126f67, type: 3}
+  - {fileID: 21300000, guid: de9809c2ab9c20b4988099f9256064e8, type: 3}
+  - {fileID: 21300000, guid: 46473a947cbff3f4cb60f7e1aa21c415, type: 3}
+  - {fileID: 21300000, guid: 46473a947cbff3f4cb60f7e1aa21c415, type: 3}
+  - {fileID: 21300000, guid: 46473a947cbff3f4cb60f7e1aa21c415, type: 3}
+  - {fileID: 21300000, guid: 813624a3715a88342a879e0744eaa1c1, type: 3}
+  - {fileID: 21300000, guid: aa8ac97a404be69439578014ee76aa2d, type: 3}
+  NoLineItemMaterial: {fileID: 2100000, guid: 2c80eeeee34bed0458c64a4f2d6af085, type: 2}
+  itemMenuPrefabs:
+  - {fileID: 6732340712677130891, guid: afe2a6a9a812fc84e95b8d4543c4d249, type: 3}
+  - {fileID: 1959397925473532714, guid: 4a4ceb54d8f86bc4dac3d0ace0278305, type: 3}
+  - {fileID: 6560431521026910990, guid: 3b325ad11559403438409f0841a14020, type: 3}
+  moveAmountBox: {fileID: 6487560236228534146, guid: cad45719b4a8d414782d6058e79bbd96, type: 3}
+  dropItemPrefabs: {fileID: 6130476765398522845, guid: 66e62bcc68d530b43a06fd8e62217eed, type: 3}
+  sightObject:
+  - {fileID: 332304045526463669, guid: c0e13f999d456634daa9499518820318, type: 3}
+  - {fileID: 5380460841224547168, guid: cfa43c0c78e1f6a44b9490eb4bc42ce5, type: 3}
+  - {fileID: 3057295709217203880, guid: 8332f1d237d224947a8a4c8ce2b0bb5d, type: 3}
+  - {fileID: 3855021201183020872, guid: 900d7ff1f903ae94f9d3086be8620f34, type: 3}
+  wallDefaultBloodPrefab: {fileID: 3208586861695215797, guid: 8130eda8313165b48aa9bca752300321, type: 3}
+  CanvasHalfX: 480
+  CanvasHalfY: 270
+  canvas: {fileID: 0}
+  mainCamera: {fileID: 0}
+  NowStartType: 0
+  mouseItem: {fileID: 0}
+  mouseItemIsVertical: 0
+  NowDestinationType: 0
+--- !u!1 &1679360149078958457
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1679360149078958456}
+  - component: {fileID: 1679360149078958726}
+  - component: {fileID: 1679360149078958727}
+  m_Layer: 0
+  m_Name: ConsumableData
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1679360149078958456
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1679360149078958457}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1679360147549932044}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1679360149078958726
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1679360149078958457}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0afedaa5cbe37da48af9874b16306879, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  consumables:
+  - name: First aid kit
+    ItemCode: 5000000
+    xsize: 2
+    ysize: 2
+    itemSprite: {fileID: 21300000, guid: ec9f7f64d8ad7c949985f65cfaed5d5e, type: 3}
+    overlapLimit: 1
+    value: 500
+    isDisposable: 1
+    useSoundIndex: 0
+    useEffect:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1679360149078958727}
+          m_TargetAssemblyTypeName: ConsumableEvent, Assembly-CSharp
+          m_MethodName: HealPlayer
+          m_Mode: 4
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 30
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - name: Bandage
+    ItemCode: 5000001
+    xsize: 1
+    ysize: 1
+    itemSprite: {fileID: 21300000, guid: f35a199363644724381cb31756bc1495, type: 3}
+    overlapLimit: 1
+    value: 100
+    isDisposable: 1
+    useSoundIndex: 0
+    useEffect:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1679360149078958727}
+          m_TargetAssemblyTypeName: ConsumableEvent, Assembly-CSharp
+          m_MethodName: HealPlayerBlood
+          m_Mode: 4
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0.5
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - name: Antidote
+    ItemCode: 5000002
+    xsize: 1
+    ysize: 1
+    itemSprite: {fileID: 21300000, guid: fe84de2b1229f3347bf7f50ea1230918, type: 3}
+    overlapLimit: 1
+    value: 100
+    isDisposable: 1
+    useSoundIndex: 0
+    useEffect:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1679360149078958727}
+          m_TargetAssemblyTypeName: ConsumableEvent, Assembly-CSharp
+          m_MethodName: HealPlayerPoison
+          m_Mode: 4
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 50
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+--- !u!114 &1679360149078958727
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1679360149078958457}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 368b62dfae81c16438b9130f560550ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &1679360149163208164
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1679360149163208163}
+  - component: {fileID: 1679360149163208162}
+  m_Layer: 0
+  m_Name: GearData
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1679360149163208163
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1679360149163208164}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1679360147549932044}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1679360149163208162
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1679360149163208164}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe172a545a4d8024aa469edfc835108e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  guns:
+  - name: K2
+    ItemCode: 0
+    xsize: 7
+    ysize: 3
+    itemSprite: {fileID: 21300000, guid: 0fef23bd80b8c624aa80fbb9fcd45868, type: 3}
+    overlapLimit: 1
+    value: 2000
+    discomfort: 0
+    gunAnimation: 1
+    constMagazineCode: 0
+    gunTexture: {fileID: 2800000, guid: ee285496e9e8871409eea8cfd568ae16, type: 3}
+    attachmentCells:
+    - kindOfAttachment: 400
+      cellPosition: {x: -5, y: 25}
+      kindOfMagazine: 1
+    - kindOfAttachment: 301
+      cellPosition: {x: -5, y: 0}
+      kindOfMagazine: 1
+    canBB: 1
+    rateOfFire: 0.1
+    maxRecoil: {x: 20, y: 20}
+    minRecoil: {x: 10, y: 10}
+    plusRecoil: 0.3
+    recoverRecoil: 1
+    fireSound: {fileID: 8300000, guid: d57c8fc3fcdc7da4d800da8aabf2372d, type: 3}
+    fireLoudness: 30
+    boltSound: {fileID: 8300000, guid: 4c25ee8e25d7341429678c5aecded5ca, type: 3}
+    BBSound: {fileID: 8300000, guid: b99029e1e5cb2d64f8853c1ffda37a38, type: 3}
+    single: 1
+    bisrt: 1
+    Auto: 1
+  - name: pistol
+    ItemCode: 0
+    xsize: 3
+    ysize: 2
+    itemSprite: {fileID: 21300000, guid: 407933c13ea0edd47a298daa3449b2ac, type: 3}
+    overlapLimit: 1
+    value: 1000
+    discomfort: 0
+    gunAnimation: 9
+    constMagazineCode: 0
+    gunTexture: {fileID: 2800000, guid: 1a7736416ea4b9f4f899a2b2e69497e6, type: 3}
+    attachmentCells:
+    - kindOfAttachment: 400
+      cellPosition: {x: -10, y: 19}
+      kindOfMagazine: 3
+    - kindOfAttachment: 301
+      cellPosition: {x: 0, y: 0}
+      kindOfMagazine: 3
+    canBB: 1
+    rateOfFire: 0.1
+    maxRecoil: {x: 30, y: 12}
+    minRecoil: {x: 15, y: 5}
+    plusRecoil: 0.5
+    recoverRecoil: 2
+    fireSound: {fileID: 8300000, guid: 88735242e60893c448c86d4e1fbb87ff, type: 3}
+    fireLoudness: 25
+    boltSound: {fileID: 8300000, guid: 200160b78fa96524da045d3494519e8b, type: 3}
+    BBSound: {fileID: 8300000, guid: 181a99856d8874342a7c6aeaeeeab04d, type: 3}
+    single: 1
+    bisrt: 0
+    Auto: 0
+  - name: Pump
+    ItemCode: 0
+    xsize: 2
+    ysize: 2
+    itemSprite: {fileID: 21300000, guid: 60ed5805c59dbb54f979693952f2b300, type: 3}
+    overlapLimit: 1
+    value: 1200
+    discomfort: 0
+    gunAnimation: 3
+    constMagazineCode: 3010002
+    gunTexture: {fileID: 2800000, guid: de6b6fce9c842894d876786e55ff0409, type: 3}
+    attachmentCells:
+    - kindOfAttachment: 400
+      cellPosition: {x: -20, y: 0}
+      kindOfMagazine: 4
+    - kindOfAttachment: 303
+      cellPosition: {x: -50, y: 0}
+      kindOfMagazine: 0
+    - kindOfAttachment: 301
+      cellPosition: {x: 0, y: -30}
+      kindOfMagazine: 11
+    canBB: 0
+    rateOfFire: 0.1
+    maxRecoil: {x: 0, y: 0}
+    minRecoil: {x: 0, y: 0}
+    plusRecoil: 0
+    recoverRecoil: 0
+    fireSound: {fileID: 0}
+    fireLoudness: 0
+    boltSound: {fileID: 0}
+    BBSound: {fileID: 0}
+    single: 1
+    bisrt: 0
+    Auto: 0
+  helmets:
+  - name: 
+    ItemCode: 0
+    xsize: 1
+    ysize: 1
+    itemSprite: {fileID: 21300000, guid: 7d4322e6750334f43a1bb864327f5dd7, type: 3}
+    overlapLimit: 0
+    value: 0
+    discomfort: 0
+    headDefense: 0
+  uniforms:
+  - name: 
+    ItemCode: 0
+    xsize: 2
+    ysize: 1
+    itemSprite: {fileID: 21300000, guid: b9fda5ea4a23319478e027ddbfaee211, type: 3}
+    overlapLimit: 1
+    value: 0
+    discomfort: 0
+  chestRigs:
+  - name: ChestRig1
+    ItemCode: 0
+    xsize: 5
+    ysize: 3
+    itemSprite: {fileID: 21300000, guid: 70b7452893a64224cadbc41f437ecfaa, type: 3}
+    overlapLimit: 1
+    value: 1000
+    discomfort: 0
+    bodyDefence: 0
+    rigCells:
+    - xsize: 1
+      ysize: 2
+      postion: {x: -34, y: 2}
+    - xsize: 1
+      ysize: 2
+      postion: {x: -11.5, y: -2}
+    - xsize: 1
+      ysize: 2
+      postion: {x: 11.5, y: -2}
+    - xsize: 1
+      ysize: 2
+      postion: {x: 34, y: 2}
+  backpacks:
+  - name: Backpack1
+    ItemCode: 0
+    xsize: 5
+    ysize: 6
+    itemSprite: {fileID: 21300000, guid: 4f32e603f4942264894649c26488e75a, type: 3}
+    overlapLimit: 1
+    value: 1000
+    discomfort: 0
+    xSpace: 5
+    ySpace: 6
+  goggles:
+  - name: 
+    ItemCode: 0
+    xsize: 1
+    ysize: 1
+    itemSprite: {fileID: 21300000, guid: 7d4322e6750334f43a1bb864327f5dd7, type: 3}
+    overlapLimit: 1
+    value: 0
+    discomfort: 0
+    goggleCategory: 2
+    performance: 0
