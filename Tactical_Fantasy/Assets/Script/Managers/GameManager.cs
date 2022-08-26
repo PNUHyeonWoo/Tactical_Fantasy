@@ -16,6 +16,7 @@ public class GameManager : MonoBehaviour
     public static MousePointer mousePointer;
     public static GameObject itemData;
     public static CameraManager cameraManager;
+    public Material blackSightMaterial;
 
     static float hp;
     static int[] firemode = new int[3] { 0, 0, 0 };

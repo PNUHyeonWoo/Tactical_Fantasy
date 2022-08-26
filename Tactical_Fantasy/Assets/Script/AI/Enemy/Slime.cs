@@ -31,8 +31,8 @@ public class Slime : AttackTarget
         {
             if (hitInformation.isLow)
             {
-                Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-                RaycastHit2D[] rayhits = Physics2D.RaycastAll(mousePos, Vector2.zero);
+                Vector2 des = hitInformation.destination;
+                RaycastHit2D[] rayhits = Physics2D.RaycastAll(des, Vector2.zero);
 
                 bool isHit = false;
 
@@ -53,7 +53,7 @@ public class Slime : AttackTarget
                     {
                         isDead = true;
 
-                        GameObject deadObj = GameObject.Instantiate(dead, new Vector3(mousePos.x, mousePos.y, 3), Quaternion.Euler(0, 0, AI.VectorToDegree(hitInformation.hitDirect)));
+                        GameObject deadObj = GameObject.Instantiate(dead, new Vector3(des.x, des.y, 3), Quaternion.Euler(0, 0, AI.VectorToDegree(hitInformation.hitDirect)));
                         deadObj.GetComponent<AudioSource>().clip = deadSound;
                         deadObj.GetComponent<AudioSource>().Play();
                         Destroy(gameObject);

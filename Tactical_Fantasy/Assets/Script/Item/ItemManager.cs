@@ -487,6 +487,10 @@ public class ItemManager : MonoBehaviour
                                                     {
                                                         SuccessMoveItem(true);
                                                     }
+                                                    else if (gun.isDoubleBarrel && startItemImage.thisContainer.MoveItemToAttachemntCell(startItemImage.x, startItemImage.y, GunContainer, 1))
+                                                    {
+                                                        SuccessMoveItem(true);
+                                                    }
                                                     else
                                                     {
                                                         FailMoveItem();
@@ -1330,6 +1334,10 @@ public class ItemManager : MonoBehaviour
                                                 //약실넣기
                                                 AttachmentContainer GunContainer = new AttachmentContainer(destinationItemImage.PLCcode[0], destinationItemImage.thisContainer.isNeedSave, destinationItemImage.itemCode, gun.attachmentCells);
                                                 if (startItemImage.attachmentContainer.MoveItemToAttachemntContainer(startItemImage.index,GunContainer,0))
+                                                {
+                                                    SuccessMoveItem(true);
+                                                }
+                                                else if (gun.isDoubleBarrel && startItemImage.thisContainer.MoveItemToAttachemntCell(startItemImage.x, startItemImage.y, GunContainer, 1))
                                                 {
                                                     SuccessMoveItem(true);
                                                 }

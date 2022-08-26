@@ -14,6 +14,7 @@ public class DebugChest : MonoBehaviour
 
         //รั
         int gun1PLC = GameManager.nonSavePLCManager.CreatePlusContainer("00000000000000");
+        int gun2PLC = GameManager.nonSavePLCManager.CreatePlusContainer("00000000000000");
         int pistol1PLC = GameManager.nonSavePLCManager.CreatePlusContainer("00000000000000");
         int pistol2PLC = GameManager.nonSavePLCManager.CreatePlusContainer("00000000000000");
         int backpack1PLC = GameManager.nonSavePLCManager.CreatePlusContainer("");
@@ -26,6 +27,8 @@ public class DebugChest : MonoBehaviour
         int magazine2PLC = GameManager.nonSavePLCManager.CreatePlusContainer("");
         int magazine3PLC = GameManager.nonSavePLCManager.CreatePlusContainer("");
         int magazine4PLC = GameManager.nonSavePLCManager.CreatePlusContainer("");
+        int magazine5PLC = GameManager.nonSavePLCManager.CreatePlusContainer("");
+        int magazine6PLC = GameManager.nonSavePLCManager.CreatePlusContainer("");
 
         int pMagazine1PLC = GameManager.nonSavePLCManager.CreatePlusContainer("");
         int pMagazine2PLC = GameManager.nonSavePLCManager.CreatePlusContainer("");
@@ -33,6 +36,7 @@ public class DebugChest : MonoBehaviour
 
 
         chest.thisContainer.InsertItem(2010000,new int[1] {gun1PLC},1);
+        chest.thisContainer.InsertItem(2010003, new int[1] { gun2PLC }, 1);
         chest.thisContainer.InsertItem(2010001, new int[1] { pistol1PLC }, 1);
         chest.thisContainer.InsertItem(2010001, new int[1] { pistol2PLC }, 1);
         chest.thisContainer.InsertItem(2050000, new int[1] { backpack1PLC }, 1);
@@ -41,6 +45,8 @@ public class DebugChest : MonoBehaviour
         chest.thisContainer.InsertItem(3010000, new int[1] { magazine2PLC }, 1);
         chest.thisContainer.InsertItem(3010000, new int[1] { magazine3PLC }, 1);
         chest.thisContainer.InsertItem(3010000, new int[1] { magazine4PLC }, 1);
+        chest.thisContainer.InsertItem(3010004, new int[1] { magazine5PLC }, 1);
+        chest.thisContainer.InsertItem(3010004, new int[1] { magazine6PLC }, 1);
         chest.thisContainer.InsertItem(3010001, new int[1] { pMagazine1PLC }, 1);
         chest.thisContainer.InsertItem(3010001, new int[1] { pMagazine2PLC }, 1);
         chest.thisContainer.InsertItem(3010001, new int[1] { pMagazine3PLC }, 1);
@@ -53,6 +59,9 @@ public class DebugChest : MonoBehaviour
         chest.thisContainer.InsertItem(4000001, new int[] { }, 60);
         chest.thisContainer.InsertItem(4000001, new int[] { }, 60);
         chest.thisContainer.InsertItem(4000001, new int[] { }, 60);
+        chest.thisContainer.InsertItem(4000002, new int[] { }, 30);
+        chest.thisContainer.InsertItem(4000003, new int[] { }, 30);
+        chest.thisContainer.InsertItem(4000004, new int[] { }, 60);
 
         chest.thisContainer.InsertItem(5000000, new int[] { }, 1);
         chest.thisContainer.InsertItem(5000001, new int[] { }, 1);

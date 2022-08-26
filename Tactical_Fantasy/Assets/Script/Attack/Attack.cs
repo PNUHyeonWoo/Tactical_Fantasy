@@ -35,11 +35,13 @@ public class Attack : MonoBehaviour
         AttackTarget.HitInformation hitInformation = new AttackTarget.HitInformation();
         hitInformation.hitPoint = new Vector2(originX, originY);
         hitInformation.hitDirect =  new Vector2(directX, directY);
+        hitInformation.hitDirect.Normalize();
         hitInformation.isLow = isLow;
         hitInformation.attackType = AttackType.Raycast;
         hitInformation.attackColider = null;
         hitInformation.origin = new Vector2(originX, originY);
         hitInformation.maxDis = range;
+        hitInformation.destination = hitInformation.origin + (hitInformation.hitDirect * range);
         hitInformation.damage = damage;
         hitInformation.penetration = penetration;
         hitInformation.attackEffect = AttackEffect.None;
@@ -83,11 +85,13 @@ public class Attack : MonoBehaviour
         AttackTarget.HitInformation hitInformation = new AttackTarget.HitInformation();
         hitInformation.hitPoint = new Vector2(originX, originY);
         hitInformation.hitDirect = new Vector2(directX, directY);
+        hitInformation.hitDirect.Normalize();
         hitInformation.isLow = isLow;
         hitInformation.attackType = AttackType.Raycast;
         hitInformation.attackColider = null;
         hitInformation.origin = new Vector2(originX, originY);
         hitInformation.maxDis = range;
+        hitInformation.destination = hitInformation.origin + (hitInformation.hitDirect * range);
         hitInformation.damage = damage;
         hitInformation.penetration = penetration;
         hitInformation.attackEffect = attackEffect;

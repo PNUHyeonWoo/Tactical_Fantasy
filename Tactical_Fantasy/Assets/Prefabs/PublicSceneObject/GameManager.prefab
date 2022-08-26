@@ -126,6 +126,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ed2d43785de2a149b02dcb71758174f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  blackSightMaterial: {fileID: 2100000, guid: 8e7e3f915c27f3549b6c51afda9363a4, type: 2}
 --- !u!1 &1679360148389850307
 GameObject:
   m_ObjectHideFlags: 0
@@ -343,6 +344,42 @@ MonoBehaviour:
     Penetration: 2
     numWarhead: 0
     spread: 0
+  - name: buckshot
+    ItemCode: 4000002
+    xsize: 1
+    ysize: 1
+    itemSprite: {fileID: 21300000, guid: 2448f4c97d089b5418d9f94612859211, type: 3}
+    overlapLimit: 30
+    value: 10
+    kindOfAmmo: 4
+    damage: 20
+    Penetration: 2
+    numWarhead: 12
+    spread: 10
+  - name: Slug
+    ItemCode: 4000003
+    xsize: 1
+    ysize: 1
+    itemSprite: {fileID: 21300000, guid: 927e2fc2ff31d654e8f75c64b473e224, type: 3}
+    overlapLimit: 30
+    value: 10
+    kindOfAmmo: 4
+    damage: 120
+    Penetration: 3
+    numWarhead: 2
+    spread: 3
+  - name: 30carbine
+    ItemCode: 4000004
+    xsize: 1
+    ysize: 1
+    itemSprite: {fileID: 21300000, guid: f4d6885af845f9646ade8e9a265928fe, type: 3}
+    overlapLimit: 60
+    value: 10
+    kindOfAmmo: 5
+    damage: 80
+    Penetration: 2
+    numWarhead: 0
+    spread: 0
 --- !u!1 &1679360148951127115
 GameObject:
   m_ObjectHideFlags: 0
@@ -415,11 +452,35 @@ MonoBehaviour:
     ItemCode: 3010002
     xsize: 2
     ysize: 1
-    itemSprite: {fileID: 21300000, guid: b9fda5ea4a23319478e027ddbfaee211, type: 3}
+    itemSprite: {fileID: 21300000, guid: 3e9973d00e24f954a941604d2a66e9e2, type: 3}
     overlapLimit: 1
     value: 0
     kindOfMagazine: 11
     magazineSize: 8
+    magazineSpeed: 0
+    MagazineSprite: {fileID: 0}
+    MagazineColor: {r: 0, g: 0, b: 0, a: 0}
+  - name: DoubleBarrelDummy
+    ItemCode: 3010003
+    xsize: 1
+    ysize: 1
+    itemSprite: {fileID: 21300000, guid: 5ca428a2bac75af46aebc55fcdb90564, type: 3}
+    overlapLimit: 1
+    value: 0
+    kindOfMagazine: 11
+    magazineSize: 0
+    magazineSpeed: 0
+    MagazineSprite: {fileID: 0}
+    MagazineColor: {r: 0, g: 0, b: 0, a: 0}
+  - name: Carbine 10 Magazine
+    ItemCode: 3010004
+    xsize: 1
+    ysize: 1
+    itemSprite: {fileID: 21300000, guid: 282a83c3fa38be14c89f7b9811aaf9a8, type: 3}
+    overlapLimit: 1
+    value: 0
+    kindOfMagazine: 5
+    magazineSize: 10
     magazineSpeed: 0
     MagazineSprite: {fileID: 0}
     MagazineColor: {r: 0, g: 0, b: 0, a: 0}
@@ -538,7 +599,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 46473a947cbff3f4cb60f7e1aa21c415, type: 3}
   - {fileID: 21300000, guid: 46473a947cbff3f4cb60f7e1aa21c415, type: 3}
   - {fileID: 21300000, guid: 813624a3715a88342a879e0744eaa1c1, type: 3}
-  - {fileID: 21300000, guid: aa8ac97a404be69439578014ee76aa2d, type: 3}
+  - {fileID: 21300000, guid: 62acd56fcd4f653459719addbe96c2eb, type: 3}
   NoLineItemMaterial: {fileID: 2100000, guid: 2c80eeeee34bed0458c64a4f2d6af085, type: 2}
   itemMenuPrefabs:
   - {fileID: 6732340712677130891, guid: afe2a6a9a812fc84e95b8d4543c4d249, type: 3}
@@ -551,6 +612,7 @@ MonoBehaviour:
   - {fileID: 5380460841224547168, guid: cfa43c0c78e1f6a44b9490eb4bc42ce5, type: 3}
   - {fileID: 3057295709217203880, guid: 8332f1d237d224947a8a4c8ce2b0bb5d, type: 3}
   - {fileID: 3855021201183020872, guid: 900d7ff1f903ae94f9d3086be8620f34, type: 3}
+  - {fileID: 6665062821492919089, guid: f9594428ec4199546b60268ebe9c3cb5, type: 3}
   wallDefaultBloodPrefab: {fileID: 3208586861695215797, guid: 8130eda8313165b48aa9bca752300321, type: 3}
   CanvasHalfX: 480
   CanvasHalfY: 270
@@ -751,6 +813,8 @@ MonoBehaviour:
     - kindOfAttachment: 301
       cellPosition: {x: -5, y: 0}
       kindOfMagazine: 1
+    isNonAutoBolt: 0
+    isDoubleBarrel: 0
     canBB: 1
     rateOfFire: 0.1
     maxRecoil: {x: 20, y: 20}
@@ -782,6 +846,8 @@ MonoBehaviour:
     - kindOfAttachment: 301
       cellPosition: {x: 0, y: 0}
       kindOfMagazine: 3
+    isNonAutoBolt: 0
+    isDoubleBarrel: 0
     canBB: 1
     rateOfFire: 0.1
     maxRecoil: {x: 30, y: 12}
@@ -797,35 +863,139 @@ MonoBehaviour:
     Auto: 0
   - name: Pump
     ItemCode: 0
-    xsize: 2
+    xsize: 7
     ysize: 2
-    itemSprite: {fileID: 21300000, guid: 60ed5805c59dbb54f979693952f2b300, type: 3}
+    itemSprite: {fileID: 21300000, guid: e73e2846d5f4d6a4a9e4223f1c50ae5f, type: 3}
     overlapLimit: 1
-    value: 1200
+    value: 0
     discomfort: 0
     gunAnimation: 3
     constMagazineCode: 3010002
-    gunTexture: {fileID: 2800000, guid: de6b6fce9c842894d876786e55ff0409, type: 3}
+    gunTexture: {fileID: 2800000, guid: 240d5a36a662cfe4f81deefa236c0d19, type: 3}
     attachmentCells:
     - kindOfAttachment: 400
-      cellPosition: {x: -20, y: 0}
+      cellPosition: {x: 0, y: 22}
       kindOfMagazine: 4
     - kindOfAttachment: 303
-      cellPosition: {x: -50, y: 0}
+      cellPosition: {x: -55, y: 10}
       kindOfMagazine: 0
     - kindOfAttachment: 301
-      cellPosition: {x: 0, y: -30}
+      cellPosition: {x: -9, y: 0}
       kindOfMagazine: 11
+    isNonAutoBolt: 1
+    isDoubleBarrel: 0
     canBB: 0
     rateOfFire: 0.1
-    maxRecoil: {x: 0, y: 0}
-    minRecoil: {x: 0, y: 0}
+    maxRecoil: {x: 20, y: 20}
+    minRecoil: {x: 20, y: 20}
     plusRecoil: 0
     recoverRecoil: 0
-    fireSound: {fileID: 0}
-    fireLoudness: 0
-    boltSound: {fileID: 0}
-    BBSound: {fileID: 0}
+    fireSound: {fileID: 8300000, guid: 46c029f680c2e034a8ebf504ac722af7, type: 3}
+    fireLoudness: 40
+    boltSound: {fileID: 8300000, guid: 1d0a3a72bfb2fe44f8bdd23fec9cd003, type: 3}
+    BBSound: {fileID: 8300000, guid: b99029e1e5cb2d64f8853c1ffda37a38, type: 3}
+    single: 1
+    bisrt: 0
+    Auto: 0
+  - name: AK47
+    ItemCode: 2010003
+    xsize: 7
+    ysize: 3
+    itemSprite: {fileID: 21300000, guid: 3fa758be9e77f1647b1f32f46553875d, type: 3}
+    overlapLimit: 1
+    value: 1200
+    discomfort: 0
+    gunAnimation: 1
+    constMagazineCode: 0
+    gunTexture: {fileID: 2800000, guid: c331c674e60933f46b4291b2a2c6a36e, type: 3}
+    attachmentCells:
+    - kindOfAttachment: 400
+      cellPosition: {x: -5, y: 25}
+      kindOfMagazine: 1
+    - kindOfAttachment: 301
+      cellPosition: {x: -5, y: 0}
+      kindOfMagazine: 1
+    isNonAutoBolt: 0
+    isDoubleBarrel: 0
+    canBB: 0
+    rateOfFire: 0.1
+    maxRecoil: {x: 30, y: 30}
+    minRecoil: {x: 10, y: 10}
+    plusRecoil: 0.4
+    recoverRecoil: 1
+    fireSound: {fileID: 8300000, guid: d57c8fc3fcdc7da4d800da8aabf2372d, type: 3}
+    fireLoudness: 30
+    boltSound: {fileID: 8300000, guid: 4c25ee8e25d7341429678c5aecded5ca, type: 3}
+    BBSound: {fileID: 8300000, guid: b99029e1e5cb2d64f8853c1ffda37a38, type: 3}
+    single: 1
+    bisrt: 0
+    Auto: 1
+  - name: DoubleBarrel
+    ItemCode: 2010004
+    xsize: 7
+    ysize: 2
+    itemSprite: {fileID: 21300000, guid: d09c7145f5e6ab549a710eeafb20b7c1, type: 3}
+    overlapLimit: 1
+    value: 0
+    discomfort: 0
+    gunAnimation: 3
+    constMagazineCode: 3010003
+    gunTexture: {fileID: 2800000, guid: 09df906faf5d35d4b86cd4eae667d954, type: 3}
+    attachmentCells:
+    - kindOfAttachment: 400
+      cellPosition: {x: -12, y: 10}
+      kindOfMagazine: 4
+    - kindOfAttachment: 400
+      cellPosition: {x: 10, y: 10}
+      kindOfMagazine: 4
+    - kindOfAttachment: 301
+      cellPosition: {x: -67, y: 1}
+      kindOfMagazine: 11
+    isNonAutoBolt: 1
+    isDoubleBarrel: 1
+    canBB: 0
+    rateOfFire: 0.1
+    maxRecoil: {x: 20, y: 20}
+    minRecoil: {x: 20, y: 20}
+    plusRecoil: 0.4
+    recoverRecoil: 1
+    fireSound: {fileID: 8300000, guid: 46c029f680c2e034a8ebf504ac722af7, type: 3}
+    fireLoudness: 30
+    boltSound: {fileID: 8300000, guid: 4c25ee8e25d7341429678c5aecded5ca, type: 3}
+    BBSound: {fileID: 8300000, guid: b99029e1e5cb2d64f8853c1ffda37a38, type: 3}
+    single: 1
+    bisrt: 0
+    Auto: 1
+  - name: M1Carbine
+    ItemCode: 2010005
+    xsize: 7
+    ysize: 2
+    itemSprite: {fileID: 21300000, guid: 4ad2defe1c318f94aba428f357e0dabb, type: 3}
+    overlapLimit: 1
+    value: 0
+    discomfort: 0
+    gunAnimation: 10
+    constMagazineCode: 0
+    gunTexture: {fileID: 2800000, guid: 1d4e86d0eda640947ba9d768953995cb, type: 3}
+    attachmentCells:
+    - kindOfAttachment: 400
+      cellPosition: {x: -7, y: 20}
+      kindOfMagazine: 5
+    - kindOfAttachment: 301
+      cellPosition: {x: -7, y: 0}
+      kindOfMagazine: 5
+    isNonAutoBolt: 0
+    isDoubleBarrel: 0
+    canBB: 0
+    rateOfFire: 0.2
+    maxRecoil: {x: 20, y: 20}
+    minRecoil: {x: 10, y: 10}
+    plusRecoil: 0.4
+    recoverRecoil: 1
+    fireSound: {fileID: 8300000, guid: 21021c1b1e37dcb438e1ce4b36f06343, type: 3}
+    fireLoudness: 20
+    boltSound: {fileID: 8300000, guid: 4c25ee8e25d7341429678c5aecded5ca, type: 3}
+    BBSound: {fileID: 8300000, guid: b99029e1e5cb2d64f8853c1ffda37a38, type: 3}
     single: 1
     bisrt: 0
     Auto: 0

@@ -16,6 +16,7 @@ public class AttackTarget : MonoBehaviour
         public Collider2D attackColider;
         public Vector2 origin;
         public float maxDis;
+        public Vector2 destination;
 
         public float damage;
         public float penetration; // 관통력이 음수일시 관통되지않았다라는 의미
@@ -70,8 +71,8 @@ public class AttackTarget : MonoBehaviour
         {
             if (hitInformation.isLow)
             {
-                Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-                RaycastHit2D[] rayhits = Physics2D.RaycastAll(mousePos, Vector2.zero);
+                Vector2 des = hitInformation.destination;
+                RaycastHit2D[] rayhits = Physics2D.RaycastAll(des, Vector2.zero);
 
                 bool isHit = false;
 

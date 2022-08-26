@@ -246,4 +246,12 @@ public class PlayerBody : MonoBehaviour
         GameManager.player.AttackWithKnighf();
     }
 
+    public void setActiveAll(int set) 
+    { 
+        main1.gameObject.SetActive(set == 1?true:false);
+        main2.gameObject.SetActive(set == 1 ? true : false);
+        middleGun.gameObject.SetActive(set == 1 ? true : false);
+        backpack.gameObject.SetActive(set == 1 ? true : false);
+    }
+
 }

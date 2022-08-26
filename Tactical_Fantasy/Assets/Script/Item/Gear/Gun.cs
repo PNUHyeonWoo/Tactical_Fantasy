@@ -17,12 +17,14 @@ public class Gun : Gear
         Uzi = 7,
         Mp7 = 8,
         Pistol = 9 ,
-        M1Carbin = 10    
+        M1Carbine = 10    
     }
     public GunAnimation gunAnimation;
     public int constMagazineCode;
     public Texture gunTexture;
     public AttachmentCell[] attachmentCells;
+    public bool isNonAutoBolt;
+    public bool isDoubleBarrel;
     public bool canBB;
     public float rateOfFire;
     public Vector2 maxRecoil;
@@ -45,7 +47,7 @@ public class Gun : Gear
 
     public static int CheckGunType(Gun gun)
     {
-        if (gun.gunAnimation == GunAnimation.K2Ak || gun.gunAnimation == GunAnimation.Ar15 || gun.gunAnimation == GunAnimation.K7 || gun.gunAnimation == GunAnimation.Uzi || gun.gunAnimation == GunAnimation.Mp7 || gun.gunAnimation == GunAnimation.Pistol || gun.gunAnimation == GunAnimation.M1Carbin)
+        if (gun.gunAnimation == GunAnimation.K2Ak || gun.gunAnimation == GunAnimation.Ar15 || gun.gunAnimation == GunAnimation.K7 || gun.gunAnimation == GunAnimation.Uzi || gun.gunAnimation == GunAnimation.Mp7 || gun.gunAnimation == GunAnimation.Pistol || gun.gunAnimation == GunAnimation.M1Carbine)
             return 0;
         else if (gun.gunAnimation == GunAnimation.DoubleBarrel)
             return 1;
@@ -120,7 +122,7 @@ public class Gun : Gear
         }
 
 
-        return new float[2] {-1,-1 };
+        return new float[2] {150,50 };
 
     }
 
@@ -202,7 +204,8 @@ public class Gun : Gear
 
     public static float GetBarrelRange(Gun gun,int direct)
     {
-        if (gun.gunAnimation == GunAnimation.K2Ak)
+        //-3 ±âº» , -2 ÇÑÄ­low  , -1 µÎÄ­low
+        if (gun.gunAnimation == GunAnimation.K2Ak || gun.gunAnimation == GunAnimation.PumpShotgun || gun.gunAnimation == GunAnimation.M1Carbine)
         {
             if (direct == -3)
                 return 17;
@@ -278,6 +281,15 @@ public class Gun : Gear
                 return 5.5f;
             else if (direct == 3)
                 return -5.5f;
+        }
+        else if (gun.gunAnimation == GunAnimation.PumpShotgun || gun.gunAnimation == GunAnimation.M1Carbine)
+        {
+            if (direct == -3)
+                return 9.5f;
+            else if (direct == -2)
+                return 5.5f;
+            else if (direct == -1)
+                return 2.5f;
         }
 
 

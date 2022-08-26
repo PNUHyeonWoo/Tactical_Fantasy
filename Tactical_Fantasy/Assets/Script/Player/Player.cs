@@ -569,7 +569,8 @@ public class Player : MonoBehaviour
 
         //왼클릭,i,1,2,3,spaec,z,R등 각종 기타 애니메이션 처리
 
-        //엎드리기
+        //엎드리기 (제거)
+        /*
         if (Input.GetKeyDown(SettingManager.Key_Prone))
         {
             if(isStand)
@@ -639,6 +640,7 @@ public class Player : MonoBehaviour
                 Rolling();
             }
         }
+        
 
         if(playerLeg.GetCurrentAnimatorStateInfo(0).IsName("Prone_LRolling") && playerBody.GetCurrentAnimatorStateInfo(0).IsTag("Prone_Rolling"))
         {
@@ -650,9 +652,10 @@ public class Player : MonoBehaviour
             transform.Translate(RollingSpeed * Time.deltaTime, 0, 0);
             playerLeg.transform.position = new Vector3(playerBody.transform.position.x, playerBody.transform.position.y, playerLeg.transform.position.z);
         }
+        */
 
         //가방
-        if(Input.GetKeyDown(SettingManager.Key_Backpack))
+        if (Input.GetKeyDown(SettingManager.Key_Backpack))
         {
             if(isStand)
             {
@@ -971,7 +974,7 @@ public class Player : MonoBehaviour
         if (Input.GetKeyDown(SettingManager.Key_Bolt) && selectGun < 3 && GameManager.itemManager.NowStartType == 0)
         {
             Gun nowGun = (Gun)Item.GetItem(playerGear.GearItems[selectGun]);
-            if (nowGun.gunAnimation != Gun.GunAnimation.DoubleBarrel)
+            if (!nowGun.isDoubleBarrel)
             {
 
                 if (isStand && (playerBody.GetCurrentAnimatorStateInfo(0).IsTag("Stand_Aim") || isAniStandFire() || playerBody.GetCurrentAnimatorStateInfo(0).IsTag("Stand_Run") || playerBody.GetCurrentAnimatorStateInfo(0).IsTag("Stand_Reload")))
@@ -989,7 +992,7 @@ public class Player : MonoBehaviour
                     else
                     {
                         BodyPlay("Stand_Bolt");
-                        SetZoom(false);
+                        //SetZoom(false); 이거 왜넣었지? 일단 없앨테니 나중에 문제생기면 다시 넣으셈;
                     }
 
                 }
@@ -1151,12 +1154,12 @@ public class Player : MonoBehaviour
             Gun nowGun = (Gun)Item.GetItem(playerGear.GearItems[selectGun]);
             int gunType = Gun.CheckGunType(nowGun);
 
-            if(gunType == 0) //단순 탄창류 총기
+            if(true) //단순 탄창류 총기
             {
                 if(isStand && (playerBody.GetCurrentAnimatorStateInfo(0).IsTag("Stand_Aim") || isAniStandFire()) && fireSecond <= 0)
                 {
                     string gunContents = GameManager.saveManager.savePLC.plusContainers[playerGear.GunsPLC[selectGun]];
-                    if(gunContents[0] != '0') //약실에 총알 존재
+                    if(gunContents[0] != '0' || (nowGun.isDoubleBarrel && gunContents[7] != '0')) //약실에 총알 존재
                     {
                         if(GetSelectGunFireMode() == 0 && Input.GetMouseButtonDown(0))//싱글
                         {
@@ -1195,11 +1198,11 @@ public class Player : MonoBehaviour
                     }
                     else if(Input.GetMouseButtonDown(0))//약실에 총알이 없음
                     {
-                        if(!isBB)
-                        {
+                        //if(!isBB)
+                        //{
                             PlayGunSound(playerSounds[10], 2);
-                        }
-                        else
+                        //}
+                        /*else
                         {
                             isBB = false;
                             if (!isLow)
@@ -1208,7 +1211,7 @@ public class Player : MonoBehaviour
                                 AimStandLowAniPlay();
 
                             PlayGunSound(nowGun.BBSound,7);
-                        }
+                        }*/
 
                     }
 
@@ -1782,6 +1785,9 @@ public class Player : MonoBehaviour
         Gun nowGun = (Gun)Item.GetItem(playerGear.GearItems[selectGun]);
         string gunContents = GameManager.saveManager.savePLC.plusContainers[playerGear.GunsPLC[selectGun]];
         int ammoCode = int.Parse(gunContents.Substring(0, 7));
+        if (ammoCode == 0 && nowGun.isDoubleBarrel)
+            ammoCode = int.Parse(gunContents.Substring(7, 7));
+
         if(ammoCode != 0)
         {
             Vector2 origin = new Vector2();
@@ -1807,14 +1813,18 @@ public class Player : MonoBehaviour
                 shotFire.transform.rotation = transform.rotation;
                 shotFire.transform.SetParent(transform);
 
-                GameObject cartridge = GameObject.Instantiate(cartridgeCasePrefabs);
-                cartridge.GetComponent<CartridgeCase>().move = new Vector2(1, 0);
-                if (!isLow)
-                    fireStart.Translate(0, -Gun.GetBoltRange(nowGun, -3), 0);
-                else
-                    fireStart.Translate(0, -Gun.GetBoltRange(nowGun, GetLow()), 0);
-                cartridge.transform.position = new Vector3(fireStart.position.x, fireStart.position.y, playerBody.transform.position.z + 1);
-                cartridge.transform.rotation = transform.rotation;
+
+                if (!nowGun.isNonAutoBolt)
+                {
+                    GameObject cartridge = GameObject.Instantiate(cartridgeCasePrefabs);
+                    cartridge.GetComponent<CartridgeCase>().move = new Vector2(1, 0);
+                    if (!isLow)
+                        fireStart.Translate(0, -Gun.GetBoltRange(nowGun, -3), 0);
+                    else
+                        fireStart.Translate(0, -Gun.GetBoltRange(nowGun, GetLow()), 0);
+                    cartridge.transform.position = new Vector3(fireStart.position.x, fireStart.position.y, playerBody.transform.position.z + 1);
+                    cartridge.transform.rotation = transform.rotation;
+                }
             }
             else
             {
@@ -1924,11 +1934,42 @@ public class Player : MonoBehaviour
             }
             Ammo ammo = (Ammo)Item.GetItem(ammoCode);
 
-            if (!isLow)
-                Attack.AttackWithRayCast(origin.x, origin.y, direction.x, direction.y, false, ammo.damage, ammo.Penetration, gameObject, new int[0], false, 400f);
-            else
+            if (ammo.numWarhead <= 1)//일반 사격
             {
-                Attack.AttackWithRayCast(origin.x, origin.y, direction.x, direction.y, true, ammo.damage, ammo.Penetration, gameObject, new int[0], false, Vector2.Distance(origin, GameManager.itemManager.mainCamera.ScreenToWorldPoint(Input.mousePosition)));
+                if (!isLow)
+                    Attack.AttackWithRayCast(origin.x, origin.y, direction.x, direction.y, false, ammo.damage, ammo.Penetration, gameObject, new int[0], false, 400f);
+                else
+                {
+                    Attack.AttackWithRayCast(origin.x, origin.y, direction.x, direction.y, true, ammo.damage, ammo.Penetration, gameObject, new int[0], false, Vector2.Distance(origin, GameManager.itemManager.mainCamera.ScreenToWorldPoint(Input.mousePosition)));
+                }
+            }
+            else//샷건 사격
+            {
+                if (!isLow)
+                {
+                    for (int b = 0; b < ammo.numWarhead; b++)
+                    {
+                        Vector2 perp = new Vector2(-direction.y, direction.x);
+                        perp = perp * (ammo.spread * Random.Range(-1.0f, 1.0f) / 100.0f);
+                        Vector2 shotdirection = direction + perp;
+                        shotdirection.Normalize();
+                        Attack.AttackWithRayCast(origin.x, origin.y, shotdirection.x, shotdirection.y, false, ammo.damage, ammo.Penetration, gameObject, new int[0], false, 400f);
+                    }
+                }
+                else
+                {
+                    for (int b = 0; b < ammo.numWarhead; b++)
+                    {
+                        Vector2 perp = new Vector2(-direction.y, direction.x);
+                        perp = perp * (ammo.spread * Random.Range(-1.0f, 1.0f) / 100.0f);
+                        Vector2 shotdirection = direction + perp;
+                        shotdirection.Normalize();
+                        float shotdis = Vector2.Distance(origin, GameManager.itemManager.mainCamera.ScreenToWorldPoint(Input.mousePosition));
+                        shotdis += ammo.spread * Random.Range(-1.0f, 1.0f) * shotdis / 100;
+                        Attack.AttackWithRayCast(origin.x, origin.y, shotdirection.x, shotdirection.y, true, ammo.damage, ammo.Penetration, gameObject, new int[0], false, shotdis);
+                    }
+                }
+
             }
 
             DoRecoil();
@@ -1939,12 +1980,29 @@ public class Player : MonoBehaviour
 
 
             int[] magazine = Gun.GetMagazineCodePLC(playerGear.GunsPLC[selectGun], true);
-            if (magazine[0] == -1)
+            if (magazine[0] == -1 || nowGun.isNonAutoBolt)
             {
                 if(nowGun.canBB)
                 isBB = true;
-                gunContents = "0000000" + gunContents.Substring(7, gunContents.Length - 7);
-                GameManager.saveManager.savePLC.plusContainers[playerGear.GunsPLC[selectGun]] = gunContents;
+
+                if (!nowGun.isDoubleBarrel)
+                {
+                    gunContents = "0000000" + gunContents.Substring(7, gunContents.Length - 7);
+                    GameManager.saveManager.savePLC.plusContainers[playerGear.GunsPLC[selectGun]] = gunContents;
+                }
+                else 
+                {
+                    if (gunContents[0] != '0')
+                    {
+                        gunContents = "0000000" + gunContents.Substring(7, gunContents.Length - 7);
+                        GameManager.saveManager.savePLC.plusContainers[playerGear.GunsPLC[selectGun]] = gunContents;
+                    }
+                    else
+                    { 
+                        gunContents = "00000000000000" + gunContents.Substring(14, gunContents.Length - 14);
+                        GameManager.saveManager.savePLC.plusContainers[playerGear.GunsPLC[selectGun]] = gunContents;
+                    }
+                }
             }
             else
             {

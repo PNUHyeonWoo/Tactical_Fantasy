@@ -27,8 +27,8 @@ public class PlayerGear
     const float P3 = 60;
     const float leftUIX = 4;
     const float leftUIY = 325;
-    const float ChestRigUIX = -786;
-    const float ChestRigUIY = 43;
+    const float ChestRigUIX = -756; // -786
+    const float ChestRigUIY = 167; //43 //187
 
 
     enum GearIndex
@@ -243,7 +243,9 @@ public class PlayerGear
 
         GameObject chestRIgBar = GameObject.Instantiate(itemManager.gearCellPrefabs[10]);
         chestRIgBar.transform.SetParent(PlayerUI.transform, false);
-        chestRIgBar.transform.localPosition = chestRigCell.transform.localPosition + new Vector3(0, chestRigCell.GetComponent<Image>().sprite.bounds.size.y + leftHMagin, 0);
+        //chestRIgBar.transform.localPosition = chestRigCell.transform.localPosition + new Vector3(0, chestRigCell.GetComponent<Image>().sprite.bounds.size.y + leftHMagin, 0);
+        chestRIgBar.transform.localPosition = chestRigCell.transform.localPosition + new Vector3(-chestRigCell.GetComponent<Image>().sprite.bounds.size.x -chestRIgBar.GetComponent<Image>().sprite.bounds.size.y - leftVMagin, 0, 0);
+        chestRIgBar.transform.localRotation = Quaternion.Euler(0, 0, -90);
 
         if (GearItems[7] == 0)
         {
