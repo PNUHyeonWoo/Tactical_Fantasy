@@ -30,9 +30,11 @@ public class NewSquareSightWall : MonoBehaviour
         meshObj.transform.parent = transform;
         meshObj.transform.localPosition = new Vector3(0, 0, 0);
         meshObj.transform.position = new Vector3(meshObj.transform.position.x, meshObj.transform.position.y, SightWallCommon.blackSightZPos);
-        meshObj.AddComponent<MeshRenderer>().material = GameManager.gameManager.blackSightMaterial;
-        mf = meshObj.AddComponent<MeshFilter>();
-        mesh = new Mesh();
+        MeshRenderer mr = meshObj.AddComponent<MeshRenderer>();
+        mr.material = GameManager.gameManager.blackSightMaterial;
+        mf = meshObj.AddComponent<MeshFilter>(); 
+
+        mesh = new Mesh();     
 
         Vector3[] vertices = new Vector3[4]
         {
@@ -66,6 +68,8 @@ public class NewSquareSightWall : MonoBehaviour
         };
         mesh.uv = uv;
         mf.mesh = mesh;
+
+        mesh.bounds = new Bounds(new Vector3(0, 0, 0), new Vector3(GetComponent<SpriteRenderer>().sprite.bounds.size.x, GetComponent<SpriteRenderer>().sprite.bounds.size.y, 0));
     }
 
     // Update is called once per frame
